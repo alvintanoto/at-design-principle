@@ -13,7 +13,7 @@ import "bytes"
 import "alvintanoto.id/design-principle/internal/view/component"
 import "alvintanoto.id/design-principle/internal/dto"
 
-func Chartpage(data dto.ViewBaseDTO) templ.Component {
+func Chartpage(data dto.ChartViewDTO) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -50,15 +50,27 @@ func Chartpage(data dto.ViewBaseDTO) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"w-full max-h-[calc(100vh-64px)] overflow-y-auto\"><div class=\"p-4\"><div class=\"text-5xl font-semibold\">Chart </div><div class=\"text-base my-2\">Chart design from chart.js</div><div class=\"text-3xl font-semibold my-1 mt-4\">Line Chart </div><hr class=\"text-disabled mb-2\"><canvas id=\"linechart\"></canvas><div class=\"text-3xl font-semibold my-1 mt-4\">Bar Chart </div><hr class=\"text-disabled mb-2\"><canvas id=\"barchart\"></canvas></div></div></div></body><script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js\"></script>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"w-full max-h-[calc(100vh-64px)] overflow-y-auto\"><div class=\"p-4\"><div class=\"text-5xl font-semibold\">Chart </div><div class=\"text-base my-2\">Chart design from chart.js</div><div class=\"text-3xl font-semibold my-1 mt-4\">Line Chart </div><hr class=\"text-disabled mb-2\"><canvas id=\"linechart\"></canvas><div class=\"text-3xl font-semibold my-1 mt-4\">Bar Chart </div><hr class=\"text-disabled mb-2\"><canvas id=\"barchart\"></canvas><div class=\"text-3xl font-semibold my-1 mt-4\">Doughnut Chart </div><hr class=\"text-disabled mb-2\"><div class=\"max-w-[768px] mx-auto\"><canvas id=\"doughnutchart\"></canvas></div><div class=\"text-3xl font-semibold my-1 mt-4\">Pie Chart </div><hr class=\"text-disabled mb-2\"><div class=\"max-w-[768px] mx-auto\"><canvas id=\"piechart\"></canvas></div><div class=\"text-3xl font-semibold my-1 mt-4\">Polar Area Chart </div><hr class=\"text-disabled mb-2\"><div class=\"max-w-[768px] mx-auto\"><canvas id=\"polararea\"></canvas></div></div></div></div></body><script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js\"></script>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = vcomponent.LineChart().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = vcomponent.Chart(data.Dataset, "bar", "barchart").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = vcomponent.Barchart().Render(ctx, templ_7745c5c3_Buffer)
+		templ_7745c5c3_Err = vcomponent.Chart(data.Dataset, "line", "linechart").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = vcomponent.Chart(data.Dataset, "doughnut", "doughnutchart").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = vcomponent.Chart(data.Dataset, "pie", "piechart").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = vcomponent.Chart(data.Dataset, "polarArea", "polararea").Render(ctx, templ_7745c5c3_Buffer)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

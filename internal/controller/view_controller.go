@@ -46,8 +46,19 @@ func (i *implViewController) FontpageHandler() func(http.ResponseWriter, *http.R
 
 func (i *implViewController) ChartpageHandler() func(http.ResponseWriter, *http.Request) {
 	return func(w http.ResponseWriter, r *http.Request) {
-		vpage.Chartpage(dto.ViewBaseDTO{
-			Name: "Chart",
+		vpage.Chartpage(dto.ChartViewDTO{
+			ViewBaseDTO: dto.ViewBaseDTO{
+				Name: "Chart",
+			},
+			Dataset: []dto.ChartDataset{
+				{Year: "2010", AcquisitionCount: "10"},
+				{Year: "2011", AcquisitionCount: "22"},
+				{Year: "2012", AcquisitionCount: "15"},
+				{Year: "2013", AcquisitionCount: "25"},
+				{Year: "2014", AcquisitionCount: "22"},
+				{Year: "2015", AcquisitionCount: "30"},
+				{Year: "2016", AcquisitionCount: "28"},
+			},
 		}).Render(r.Context(), w)
 	}
 }

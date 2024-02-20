@@ -3,7 +3,7 @@ package vpage
 import "alvintanoto.id/design-principle/internal/view/component"
 import "alvintanoto.id/design-principle/internal/dto"
 
-templ Chartpage (data dto.ViewBaseDTO) {
+templ Chartpage (data dto.ChartViewDTO) {
 	<html>
 		@vcomponent.Title(data.Name)
 		<body class="max-h-[100vh] select-none text-base overflow-hidden">
@@ -24,12 +24,30 @@ templ Chartpage (data dto.ViewBaseDTO) {
 						<div class="text-3xl font-semibold my-1 mt-4">Bar Chart </div>
 						<hr class="text-disabled mb-2"/>
 						<canvas id="barchart"></canvas>
+						<div class="text-3xl font-semibold my-1 mt-4">Doughnut Chart </div>
+						<hr class="text-disabled mb-2"/>
+						<div class="max-w-[768px] mx-auto">
+							<canvas id="doughnutchart"></canvas>
+						</div>
+						<div class="text-3xl font-semibold my-1 mt-4">Pie Chart </div>
+						<hr class="text-disabled mb-2"/>
+						<div class="max-w-[768px] mx-auto">
+							<canvas id="piechart"></canvas>
+						</div>
+						<div class="text-3xl font-semibold my-1 mt-4">Polar Area Chart </div>
+						<hr class="text-disabled mb-2"/>
+						<div class="max-w-[768px] mx-auto">
+							<canvas id="polararea"></canvas>
+						</div>
 					</div>
 				</div>
 			</div>
 		</body>
 		<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
-		@vcomponent.LineChart()
-		@vcomponent.Barchart()
+		@vcomponent.Chart(data.Dataset, "bar", "barchart")
+		@vcomponent.Chart(data.Dataset, "line", "linechart")
+		@vcomponent.Chart(data.Dataset, "doughnut", "doughnutchart")
+		@vcomponent.Chart(data.Dataset, "pie", "piechart")
+		@vcomponent.Chart(data.Dataset, "polarArea", "polararea")
 	</html>
 }
