@@ -47,11 +47,15 @@ func SideNavigation(route string) templ.Component {
 			templ_7745c5c3_Var2 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"text-base w-full border-r border-default-border\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"text-base w-full border-r border-default-border\"><a href=\"/\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var3 = []any{"m-1 p-1  text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "color"), templ.KV("hover:bg-primary/10", route == "color")}
+		var templ_7745c5c3_Var3 = []any{
+			"m-1 p-1  text-text cursor-pointer rounded-sm",
+			templ.KV("hover:bg-separator/10", route != "Overview"),
+			templ.KV("bg-primary/10", route == "Overview"),
+		}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var3...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -64,11 +68,17 @@ func SideNavigation(route string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Overview</div><div><div class=\"p-2 text-sm text-disabled cursor-default\">General</div><hr class=\"mx-2 text-disabled\"><a href=\"/color\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Overview</div></a><div><div class=\"p-2 text-sm text-disabled cursor-default\">General</div><hr class=\"mx-2 text-disabled\"><a href=\"/color\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var4 = []any{"m-1 p-1  text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "color"), templ.KV("hover:bg-primary/10", route == "color")}
+		var templ_7745c5c3_Var4 = []any{
+			"m-1 p-1 cursor-pointer rounded-sm",
+			templ.KV("text-text", route != "Color"),
+			templ.KV("hover:bg-separator/10", route != "Color"),
+			templ.KV("bg-primary/10", route == "Color"),
+			templ.KV("text-primary", route == "Color"),
+		}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var4...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err

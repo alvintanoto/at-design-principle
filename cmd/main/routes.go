@@ -10,6 +10,7 @@ func (app *Application) registerRoutes() {
 	router := mux.NewRouter()
 
 	router.HandleFunc("/", app.Controller.ViewController.HomepageHandler())
+	router.HandleFunc("/color", app.Controller.ViewController.ColorpageHandler())
 
 	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./public/assets/"))))
 
