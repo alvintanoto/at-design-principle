@@ -1,0 +1,14 @@
+package vcomponent 
+
+templ Title(title string) {
+	<head>
+		<link href="/assets/css/css.css" rel="stylesheet"/>
+		<title>
+			if title != "" {
+				{ title }
+			} else {
+				Design Principle
+			}
+		</title>
+	</head>
+}

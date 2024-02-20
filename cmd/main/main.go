@@ -9,11 +9,14 @@ import (
 	"os/signal"
 	"time"
 
+	"alvintanoto.id/design-principle/internal/controller"
 	"github.com/gorilla/mux"
 )
 
 type Application struct {
 	Configurations *Configurations
+
+	Controller controller.Controller
 
 	Router *mux.Router
 }
@@ -28,9 +31,14 @@ func (app *Application) initConfigs() {
 	app.Configurations = configs
 }
 
+func (app *Application) initController() {
+	app.Controller = controller.NewController()
+}
+
 func main() {
 	app := &Application{}
 	app.initConfigs()
+	app.initController()
 	app.registerRoutes()
 
 	server := http.Server{

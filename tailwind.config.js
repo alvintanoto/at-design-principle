@@ -33,7 +33,7 @@ module.exports = {
       "heading-text": "#000000E0",
       "text": "#000000E0",
       "secondary-text": "#000000A6",
-      "disabled-text": "#00000040",
+      "disabled": "#00000040",
       "default-border": "#D9D9D9FF",
       "separator": "#0505050F",
       "layout-background": "#F5F5F5FF",
@@ -42,7 +42,7 @@ module.exports = {
       "dark-heading-text": "#FFFFFFD9",
       "dark-text": "#FFFFFFD9",
       "dark-secondary-text": "#FFFFFFA6",
-      "dark-disabled-text": "#FFFFFF40",
+      "dark-disabled": "#FFFFFF40",
       "dark-default-border": "#424242FF",
       "dark-separator": "#FDFDFD1F",
       "dark-layout-background": "#282C34"

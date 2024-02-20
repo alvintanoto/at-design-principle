@@ -1,5 +1,18 @@
 package vpage
 
+import "alvintanoto.id/design-principle/internal/view/component"
+
 templ Homepage() {
-	<html></html>
+	<html>
+		@vcomponent.Title("")
+		<body class="max-h-[100vh] select-none text-base overflow-hidden">
+			@vcomponent.HeadLayout()
+			<div class="grid-cols-2 md:flex md:min-h-full">
+				<div class="hidden md:flex md:min-w-[192px]">
+					@vcomponent.SideNavigation()
+				</div>
+				<div class="w-full"></div>
+			</div>
+		</body>
+	</html>
 }
