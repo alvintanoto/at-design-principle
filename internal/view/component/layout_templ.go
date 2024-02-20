@@ -91,11 +91,17 @@ func SideNavigation(route string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Color</div></a>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Color</div></a> <a href=\"/font\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var5 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "font"), templ.KV("hover:bg-primary/10", route == "font")}
+		var templ_7745c5c3_Var5 = []any{
+			"m-1 p-1 cursor-pointer rounded-sm",
+			templ.KV("text-text", route != "Font"),
+			templ.KV("hover:bg-separator/10", route != "Font"),
+			templ.KV("bg-primary/10", route == "Font"),
+			templ.KV("text-primary", route == "Font"),
+		}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var5...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -108,7 +114,7 @@ func SideNavigation(route string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Font</div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Font</div></a>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

@@ -580,6 +580,10 @@ video {
   margin-right: 8px;
 }
 
+.mt-4 {
+  margin-top: 32px;
+}
+
 .flex {
   display: flex;
 }
@@ -765,6 +769,16 @@ video {
   line-height: 28px;
 }
 
+.text-3xl {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+.text-4xl {
+  font-size: 30px;
+  line-height: 38px;
+}
+
 .text-5xl {
   font-size: 38px;
   line-height: 46px;
@@ -780,8 +794,21 @@ video {
   line-height: 20px;
 }
 
+.text-xl {
+  font-size: 16px;
+  line-height: 24px;
+}
+
 .font-light {
   font-weight: 200;
+}
+
+.font-medium {
+  font-weight: 500;
+}
+
+.font-normal {
+  font-weight: 400;
 }
 
 .font-semibold {

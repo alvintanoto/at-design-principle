@@ -42,9 +42,19 @@ templ SideNavigation (route string) {
 					Color
 				</div>
 			</a>
-			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="font"),templ.KV("hover:bg-primary/10", route=="font") }>
-				Font
-			</div>
+			<a href="/font">
+				<div
+					class={
+						"m-1 p-1 cursor-pointer rounded-sm",
+						templ.KV("text-text", route != "Font"),
+						templ.KV("hover:bg-separator/10", route != "Font"),
+						templ.KV("bg-primary/10", route == "Font"),
+						templ.KV("text-primary", route == "Font"),
+					}
+				>
+					Font
+				</div>
+			</a>
 			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="button"),templ.KV("hover:bg-primary/10", route=="button") }>
 				Button
 			</div>

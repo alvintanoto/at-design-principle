@@ -10,6 +10,7 @@ import (
 type ViewController interface {
 	HomepageHandler() func(http.ResponseWriter, *http.Request)
 	ColorpageHandler() func(http.ResponseWriter, *http.Request)
+	FontpageHandler() func(http.ResponseWriter, *http.Request)
 }
 
 type implViewController struct {
@@ -29,6 +30,14 @@ func (i *implViewController) ColorpageHandler() func(http.ResponseWriter, *http.
 	return func(w http.ResponseWriter, r *http.Request) {
 		vpage.Colorpage(dto.ViewBaseDTO{
 			Name: "Color",
+		}).Render(r.Context(), w)
+	}
+}
+
+func (i *implViewController) FontpageHandler() func(http.ResponseWriter, *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		vpage.Fontpage(dto.ViewBaseDTO{
+			Name: "Font",
 		}).Render(r.Context(), w)
 	}
 }
