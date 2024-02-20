@@ -64,9 +64,6 @@ templ SideNavigation (route string) {
 				Navigation
 			</div>
 			<hr class="mx-2 text-disabled"/>
-			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="breadcrumbs"),templ.KV("hover:bg-primary/10", route=="breadcrumbs") }>
-				Breadcrumbs
-			</div>
 			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="dropdown"),templ.KV("hover:bg-primary/10", route=="dropdown") }>
 				Dropdown
 			</div>

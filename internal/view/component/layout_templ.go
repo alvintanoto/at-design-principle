@@ -135,7 +135,7 @@ func SideNavigation(route string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var7 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "breadcrumbs"), templ.KV("hover:bg-primary/10", route == "breadcrumbs")}
+		var templ_7745c5c3_Var7 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "dropdown"), templ.KV("hover:bg-primary/10", route == "dropdown")}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var7...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -148,11 +148,11 @@ func SideNavigation(route string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Breadcrumbs</div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Dropdown</div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var8 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "dropdown"), templ.KV("hover:bg-primary/10", route == "dropdown")}
+		var templ_7745c5c3_Var8 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "pagination"), templ.KV("hover:bg-primary/10", route == "pagination")}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var8...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -165,11 +165,11 @@ func SideNavigation(route string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Dropdown</div>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Pagination</div></div><div><div class=\"p-2 text-sm text-disabled cursor-default\">Data Entry</div><hr class=\"mx-2 text-disabled\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var9 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "pagination"), templ.KV("hover:bg-primary/10", route == "pagination")}
+		var templ_7745c5c3_Var9 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "form"), templ.KV("hover:bg-primary/10", route == "form")}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var9...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -182,11 +182,17 @@ func SideNavigation(route string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Pagination</div></div><div><div class=\"p-2 text-sm text-disabled cursor-default\">Data Entry</div><hr class=\"mx-2 text-disabled\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Form</div></div><div><div class=\"p-2 text-sm text-disabled cursor-default\">Data Display</div><hr class=\"mx-2 text-disabled\"><a href=\"/chart\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var10 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "form"), templ.KV("hover:bg-primary/10", route == "form")}
+		var templ_7745c5c3_Var10 = []any{
+			"m-1 p-1 cursor-pointer rounded-sm",
+			templ.KV("text-text", route != "Chart"),
+			templ.KV("hover:bg-separator/10", route != "Chart"),
+			templ.KV("bg-primary/10", route == "Chart"),
+			templ.KV("text-primary", route == "Chart"),
+		}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var10...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -199,17 +205,11 @@ func SideNavigation(route string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Form</div></div><div><div class=\"p-2 text-sm text-disabled cursor-default\">Data Display</div><hr class=\"mx-2 text-disabled\"><a href=\"/chart\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Chart</div></a>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var11 = []any{
-			"m-1 p-1 cursor-pointer rounded-sm",
-			templ.KV("text-text", route != "Chart"),
-			templ.KV("hover:bg-separator/10", route != "Chart"),
-			templ.KV("bg-primary/10", route == "Chart"),
-			templ.KV("text-primary", route == "Chart"),
-		}
+		var templ_7745c5c3_Var11 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "table"), templ.KV("hover:bg-primary/10", route == "table")}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var11...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -222,11 +222,17 @@ func SideNavigation(route string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Chart</div></a>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Table</div></div><div><div class=\"p-2 text-sm text-disabled cursor-default\">Feedback</div><hr class=\"mx-2 text-disabled\"><a href=\"/alert\">")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var12 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "table"), templ.KV("hover:bg-primary/10", route == "table")}
+		var templ_7745c5c3_Var12 = []any{
+			"m-1 p-1 cursor-pointer rounded-sm",
+			templ.KV("text-text", route != "Alert"),
+			templ.KV("hover:bg-separator/10", route != "Alert"),
+			templ.KV("bg-primary/10", route == "Alert"),
+			templ.KV("text-primary", route == "Alert"),
+		}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var12...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -239,17 +245,11 @@ func SideNavigation(route string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Table</div></div><div><div class=\"p-2 text-sm text-disabled cursor-default\">Feedback</div><hr class=\"mx-2 text-disabled\"><a href=\"/alert\">")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Alert</div></a>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var13 = []any{
-			"m-1 p-1 cursor-pointer rounded-sm",
-			templ.KV("text-text", route != "Alert"),
-			templ.KV("hover:bg-separator/10", route != "Alert"),
-			templ.KV("bg-primary/10", route == "Alert"),
-			templ.KV("text-primary", route == "Alert"),
-		}
+		var templ_7745c5c3_Var13 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "notification"), templ.KV("hover:bg-primary/10", route == "notification")}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var13...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -262,11 +262,11 @@ func SideNavigation(route string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Alert</div></a>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Notification</div>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		var templ_7745c5c3_Var14 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "notification"), templ.KV("hover:bg-primary/10", route == "notification")}
+		var templ_7745c5c3_Var14 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "modal"), templ.KV("hover:bg-primary/10", route == "modal")}
 		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var14...)
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
@@ -276,23 +276,6 @@ func SideNavigation(route string) templ.Component {
 			return templ_7745c5c3_Err
 		}
 		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ.CSSClasses(templ_7745c5c3_Var14).String()))
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("\">Notification</div>")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		var templ_7745c5c3_Var15 = []any{"m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route != "modal"), templ.KV("hover:bg-primary/10", route == "modal")}
-		templ_7745c5c3_Err = templ.RenderCSSItems(ctx, templ_7745c5c3_Buffer, templ_7745c5c3_Var15...)
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<div class=\"")
-		if templ_7745c5c3_Err != nil {
-			return templ_7745c5c3_Err
-		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString(templ.EscapeString(templ.CSSClasses(templ_7745c5c3_Var15).String()))
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
