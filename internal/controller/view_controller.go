@@ -12,6 +12,7 @@ type ViewController interface {
 	ColorpageHandler() func(http.ResponseWriter, *http.Request)
 	FontpageHandler() func(http.ResponseWriter, *http.Request)
 	ChartpageHandler() func(http.ResponseWriter, *http.Request)
+	AlertPageHandler() func(http.ResponseWriter, *http.Request)
 }
 
 type implViewController struct {
@@ -47,6 +48,14 @@ func (i *implViewController) ChartpageHandler() func(http.ResponseWriter, *http.
 	return func(w http.ResponseWriter, r *http.Request) {
 		vpage.Chartpage(dto.ViewBaseDTO{
 			Name: "Chart",
+		}).Render(r.Context(), w)
+	}
+}
+
+func (i *implViewController) AlertPageHandler() func(http.ResponseWriter, *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		vpage.Alertpage(dto.ViewBaseDTO{
+			Name: "Alert",
 		}).Render(r.Context(), w)
 	}
 }

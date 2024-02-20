@@ -50,7 +50,7 @@ func Chartpage(data dto.ViewBaseDTO) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"w-full max-h-[calc(100vh-64px)] overflow-y-auto\"><div class=\"p-4\"><div class=\"text-5xl font-semibold\">Chart </div><div class=\"text-base my-2\">Chart design. </div><div class=\"text-3xl font-semibold my-1 mt-4\">Line Chart </div><hr class=\"text-disabled mb-2\"><canvas id=\"linechart\"></canvas><div class=\"text-3xl font-semibold my-1 mt-4\">Bar Chart </div><hr class=\"text-disabled mb-2\"><canvas id=\"barchart\"></canvas></div></div></div></body><script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js\"></script>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"w-full max-h-[calc(100vh-64px)] overflow-y-auto\"><div class=\"p-4\"><div class=\"text-5xl font-semibold\">Chart </div><div class=\"text-base my-2\">Chart design from chart.js</div><div class=\"text-3xl font-semibold my-1 mt-4\">Line Chart </div><hr class=\"text-disabled mb-2\"><canvas id=\"linechart\"></canvas><div class=\"text-3xl font-semibold my-1 mt-4\">Bar Chart </div><hr class=\"text-disabled mb-2\"><canvas id=\"barchart\"></canvas></div></div></div></body><script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js\"></script>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

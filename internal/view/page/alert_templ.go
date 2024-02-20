@@ -13,7 +13,7 @@ import "bytes"
 import "alvintanoto.id/design-principle/internal/view/component"
 import "alvintanoto.id/design-principle/internal/dto"
 
-func Colorpage(data dto.ViewBaseDTO) templ.Component {
+func Alertpage(data dto.ViewBaseDTO) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -50,7 +50,39 @@ func Colorpage(data dto.ViewBaseDTO) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"w-full max-h-[calc(100vh-64px)] overflow-y-auto\"><div class=\"p-4\"><div class=\"text-5xl font-semibold\">Color </div><div class=\"text-base my-2\">Our color convention pick for our site design. </div><div class=\"min-w-full min-h-[480px] rounded-md flex flex-row relative\"><div class=\"absolute w-full flex flex-col items-center my-4\"><div class=\"bg-primary w-[240px] my-1 text-white items-center text-center rounded-sm px-2 py-1\">Primary</div><div class=\"bg-success w-[240px] my-1 text-white items-center text-center rounded-sm px-2 py-1\">Success</div><div class=\"bg-warning w-[240px] my-1 text-white items-center text-center rounded-sm px-2 py-1\">Warning</div><div class=\"bg-danger w-[240px] my-1 text-white items-center text-center rounded-sm px-2 py-1\">Danger</div><div class=\"flex flex-row w-full my-1 items-center justify-around\"><div class=\"text-center text-text rounded-sm px-2 py-1\">Text </div><div class=\"text-center text-dark-text rounded-sm px-2 py-1\">Text </div></div><div class=\"flex flex-row w-full my-1 items-center justify-around\"><div class=\"text-center text-text border border-default-border rounded-sm px-4 py-1\">Border </div><div class=\"text-center text-dark-text border border-dark-default-border rounded-sm px-4 py-1\">Border </div></div></div><div class=\"bg-layout-background flex-1 rounded-l-md\"></div><div class=\"bg-dark-layout-background flex-1 rounded-r-md\"></div></div></div></div></div></body></html>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"w-full max-h-[calc(100vh-64px)] overflow-y-auto\"><div class=\"p-4\"><div class=\"text-5xl font-semibold\">Alert </div><div class=\"text-base my-2\">Alerts in our design.</div><div class=\"py-1\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = vcomponent.Alert("primary", "This is primary alert.").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"py-1\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = vcomponent.Alert("success", "This is success alert.").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"py-1\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = vcomponent.Alert("warning", "This is warning alert.").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"py-1\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = vcomponent.Alert("danger", "This is danger alert.").Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div></div></div></div></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

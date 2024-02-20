@@ -110,9 +110,19 @@ templ SideNavigation (route string) {
 				Feedback
 			</div>
 			<hr class="mx-2 text-disabled"/>
-			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="alert"),templ.KV("hover:bg-primary/10", route=="alert") }>
-				Alert
-			</div>
+			<a href="/alert">
+				<div
+					class={
+						"m-1 p-1 cursor-pointer rounded-sm",
+						templ.KV("text-text", route != "Alert"),
+						templ.KV("hover:bg-separator/10", route != "Alert"),
+						templ.KV("bg-primary/10", route == "Alert"),
+						templ.KV("text-primary", route == "Alert"),
+					}
+				>
+					Alert
+				</div>
+			</a>
 			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="notification"),templ.KV("hover:bg-primary/10", route=="notification") }>
 				Notification
 			</div>

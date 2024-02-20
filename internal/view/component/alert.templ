@@ -1,0 +1,15 @@
+package vcomponent
+
+templ Alert(alertType string, message string) {
+	<div
+		class={
+			"px-2 py-1 border rounded-sm",
+			templ.KV("text-primary bg-primary/10 border-primary", alertType == "primary"),
+			templ.KV("text-success bg-success/10 border-success", alertType == "success"),
+			templ.KV("text-warning bg-warning/10 border-warning", alertType == "warning"),
+			templ.KV("text-danger bg-danger/10 border-danger", alertType == "danger"),
+		}
+	>
+		{ message }
+	</div>
+}
