@@ -576,6 +576,10 @@ video {
   margin-bottom: 32px;
 }
 
+.mb-2 {
+  margin-bottom: 12px;
+}
+
 .mr-1 {
   margin-right: 8px;
 }
@@ -602,6 +606,10 @@ video {
 
 .max-h-\[100vh\] {
   max-height: 100vh;
+}
+
+.max-h-\[calc\(100vh-64px\)\] {
+  max-height: calc(100vh - 64px);
 }
 
 .min-h-\[480px\] {
@@ -664,6 +672,10 @@ video {
 
 .overflow-hidden {
   overflow: hidden;
+}
+
+.overflow-y-auto {
+  overflow-y: auto;
 }
 
 .rounded-md {

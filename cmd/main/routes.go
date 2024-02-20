@@ -12,6 +12,7 @@ func (app *Application) registerRoutes() {
 	router.HandleFunc("/", app.Controller.ViewController.HomepageHandler())
 	router.HandleFunc("/color", app.Controller.ViewController.ColorpageHandler())
 	router.HandleFunc("/font", app.Controller.ViewController.FontpageHandler())
+	router.HandleFunc("/chart", app.Controller.ViewController.ChartpageHandler())
 
 	router.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./public/assets/"))))
 

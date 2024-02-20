@@ -88,9 +88,19 @@ templ SideNavigation (route string) {
 				Data Display
 			</div>
 			<hr class="mx-2 text-disabled"/>
-			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="chart"),templ.KV("hover:bg-primary/10", route=="chart") }>
-				Chart
-			</div>
+			<a href="/chart">
+				<div
+					class={
+						"m-1 p-1 cursor-pointer rounded-sm",
+						templ.KV("text-text", route != "Chart"),
+						templ.KV("hover:bg-separator/10", route != "Chart"),
+						templ.KV("bg-primary/10", route == "Chart"),
+						templ.KV("text-primary", route == "Chart"),
+					}
+				>
+					Chart
+				</div>
+			</a>
 			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="table"),templ.KV("hover:bg-primary/10", route=="table") }>
 				Table
 			</div>

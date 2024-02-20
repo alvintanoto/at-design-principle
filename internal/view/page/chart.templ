@@ -1,0 +1,35 @@
+package vpage
+
+import "alvintanoto.id/design-principle/internal/view/component"
+import "alvintanoto.id/design-principle/internal/dto"
+
+templ Chartpage (data dto.ViewBaseDTO) {
+	<html>
+		@vcomponent.Title(data.Name)
+		<body class="max-h-[100vh] select-none text-base overflow-hidden">
+			@vcomponent.HeadLayout()
+			<div class="grid-cols-2 md:flex md:min-h-full">
+				<div class="hidden md:flex md:min-w-[256px]">
+					@vcomponent.SideNavigation(data.Name)
+				</div>
+				<div class="w-full max-h-[calc(100vh-64px)] overflow-y-auto">
+					<div class="p-4">
+						<div class="text-5xl font-semibold">Chart </div>
+						<div class="text-base my-2">
+							Chart design. 
+						</div>
+						<div class="text-3xl font-semibold my-1 mt-4">Line Chart </div>
+						<hr class="text-disabled mb-2"/>
+						<canvas id="linechart"></canvas>
+						<div class="text-3xl font-semibold my-1 mt-4">Bar Chart </div>
+						<hr class="text-disabled mb-2"/>
+						<canvas id="barchart"></canvas>
+					</div>
+				</div>
+			</div>
+		</body>
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+		@vcomponent.LineChart()
+		@vcomponent.Barchart()
+	</html>
+}
