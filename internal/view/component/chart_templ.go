@@ -7,6 +7,7 @@ package vcomponent
 
 import "github.com/a-h/templ"
 
+// TODO: simplify barchart function
 func LineChart() templ.ComponentScript {
 	return templ.ComponentScript{
 		Name: `__templ_LineChart_1f6a`,

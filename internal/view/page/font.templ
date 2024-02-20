@@ -5,7 +5,7 @@ import "alvintanoto.id/design-principle/internal/dto"
 
 templ Fontpage(data dto.ViewBaseDTO) {
 	<html>
-		@vcomponent.Title("")
+		@vcomponent.Title(data.Name)
 		<body class="max-h-[100vh] select-none text-base overflow-hidden">
 			@vcomponent.HeadLayout()
 			<div class="grid-cols-2 md:flex md:min-h-full">

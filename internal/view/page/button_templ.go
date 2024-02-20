@@ -13,7 +13,7 @@ import "bytes"
 import "alvintanoto.id/design-principle/internal/view/component"
 import "alvintanoto.id/design-principle/internal/dto"
 
-func Fontpage(data dto.ViewBaseDTO) templ.Component {
+func Buttonpage(data dto.ViewBaseDTO) templ.Component {
 	return templ.ComponentFunc(func(ctx context.Context, templ_7745c5c3_W io.Writer) (templ_7745c5c3_Err error) {
 		templ_7745c5c3_Buffer, templ_7745c5c3_IsBuffer := templ_7745c5c3_W.(*bytes.Buffer)
 		if !templ_7745c5c3_IsBuffer {
@@ -50,7 +50,19 @@ func Fontpage(data dto.ViewBaseDTO) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"w-full\"><div class=\"p-4\"><div class=\"text-5xl font-semibold my-1\">Font </div><div class=\"text-base my-2\">Our font convention pick for our site design. </div><div class=\"text-3xl font-semibold my-1 mt-4\">Font Size </div><hr class=\"text-disabled\"><div class=\"text-5xl my-2\">The quick brown fox jumps over the lazy dog</div><div class=\"text-4xl my-2\">The quick brown fox jumps over the lazy dog</div><div class=\"text-3xl my-2\">The quick brown fox jumps over the lazy dog</div><div class=\"text-2xl my-2\">The quick brown fox jumps over the lazy dog</div><div class=\"text-xl my-2\">The quick brown fox jumps over the lazy dog</div><div class=\"text-base my-2\">The quick brown fox jumps over the lazy dog</div><div class=\"text-sm my-2\">The quick brown fox jumps over the lazy dog</div><div class=\"text-3xl font-semibold my-1 mt-4\">Font Weight </div><hr class=\"text-disabled\"><div class=\"text-xl font-semibold my-2\">The quick brown fox jumps over the lazy dog</div><div class=\"text-xl font-medium my-2\">The quick brown fox jumps over the lazy dog</div><div class=\"text-xl font-normal my-2\">The quick brown fox jumps over the lazy dog</div><div class=\"text-xl font-light my-2\">The quick brown fox jumps over the lazy dog</div></div></div></div></body></html>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</div><div class=\"w-full max-h-[calc(100vh-64px)] overflow-y-auto\"><div class=\"p-4\"><div class=\"text-5xl font-semibold\">Chart </div><div class=\"text-base my-2\">Chart design. </div><div class=\"text-3xl font-semibold my-1 mt-4\">Line Chart </div><hr class=\"text-disabled mb-2\"><canvas id=\"linechart\"></canvas><div class=\"text-3xl font-semibold my-1 mt-4\">Bar Chart </div><hr class=\"text-disabled mb-2\"><canvas id=\"barchart\"></canvas></div></div></div></body><script src=\"https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js\"></script>")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = vcomponent.LineChart().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = vcomponent.Barchart().Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
