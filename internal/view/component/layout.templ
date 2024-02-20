@@ -11,39 +11,77 @@ templ HeadLayout() {
 	</div>
 }
 
-templ SideNavigation () {
-	<div class="text-base w-full border-r border-default-border p-2">
-		<div class="p-2 text-base text-text cursor-pointer">
+templ SideNavigation (route string) {
+	<div class="text-base w-full border-r border-default-border">
+		<div class={ "m-1 p-1  text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="color"),templ.KV("hover:bg-primary/10", route=="color") }>
 			Overview
 		</div>
 		<div>
-			<div class="p-2 text-disabled cursor-default">
+			<div class="p-2 text-sm text-disabled cursor-default">
 				General
 			</div>
-		</div>
-		<div>
-			<div class="p-2 text-disabled cursor-default">
-				Layout
+			<hr class="mx-2 text-disabled"/>
+			<a href="/color">
+				<div class={ "m-1 p-1  text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="color"),templ.KV("hover:bg-primary/10", route=="color") }>
+					Color
+				</div>
+			</a>
+			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="font"),templ.KV("hover:bg-primary/10", route=="font") }>
+				Font
+			</div>
+			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="button"),templ.KV("hover:bg-primary/10", route=="button") }>
+				Button
 			</div>
 		</div>
 		<div>
-			<div class="p-2 text-disabled cursor-default">
+			<div class="p-2 text-sm text-disabled cursor-default">
 				Navigation
 			</div>
+			<hr class="mx-2 text-disabled"/>
+			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="breadcrumbs"),templ.KV("hover:bg-primary/10", route=="breadcrumbs") }>
+				Breadcrumbs
+			</div>
+			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="dropdown"),templ.KV("hover:bg-primary/10", route=="dropdown") }>
+				Dropdown
+			</div>
+			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="pagination"),templ.KV("hover:bg-primary/10", route=="pagination") }>
+				Pagination
+			</div>
 		</div>
 		<div>
-			<div class="p-2 text-disabled cursor-default">
+			<div class="p-2 text-sm text-disabled cursor-default">
 				Data Entry
 			</div>
-		</div>
-		<div>
-			<div class="p-2 text-disabled cursor-default">
-				Data Display
+			<hr class="mx-2 text-disabled"/>
+			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="form"),templ.KV("hover:bg-primary/10", route=="form") }>
+				Form
 			</div>
 		</div>
 		<div>
-			<div class="p-2 text-disabled cursor-default">
+			<div class="p-2 text-sm text-disabled cursor-default">
+				Data Display
+			</div>
+			<hr class="mx-2 text-disabled"/>
+			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="chart"),templ.KV("hover:bg-primary/10", route=="chart") }>
+				Chart
+			</div>
+			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="table"),templ.KV("hover:bg-primary/10", route=="table") }>
+				Table
+			</div>
+		</div>
+		<div>
+			<div class="p-2 text-sm text-disabled cursor-default">
 				Feedback
+			</div>
+			<hr class="mx-2 text-disabled"/>
+			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="alert"),templ.KV("hover:bg-primary/10", route=="alert") }>
+				Alert
+			</div>
+			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="notification"),templ.KV("hover:bg-primary/10", route=="notification") }>
+				Notification
+			</div>
+			<div class={ "m-1 p-1 text-text cursor-pointer rounded-sm", templ.KV("hover:bg-separator/10", route!="modal"),templ.KV("hover:bg-primary/10", route=="modal") }>
+				Modal
 			</div>
 		</div>
 	</div>
