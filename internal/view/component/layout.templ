@@ -12,7 +12,7 @@ templ HeadLayout() {
 }
 
 templ SideNavigation (route string) {
-	<div class="text-base w-full border-r border-default-border">
+	<div class="text-base w-full max-h-[calc(100vh-64px)] overflow-y-auto border-r border-default-border">
 		<a href="/">
 			<div
 				class={
