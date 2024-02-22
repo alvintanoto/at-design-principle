@@ -24,6 +24,7 @@ module.exports = {
       // Functional Color
       black: '#000000',
       white: '#FFFFFF',
+      transparent: "transparent",
       primary: '#1677ff',
       success: '#52c41a',
       warning: '#faad14',

@@ -3,7 +3,11 @@ package vpage
 import "alvintanoto.id/design-principle/internal/view/component"
 import "alvintanoto.id/design-principle/internal/dto"
 
-templ Buttonpage (data dto.ViewBaseDTO) {
+script selectDropdown(btnType string) {
+    document.getElementById("btn_type_select").value = btnType
+}
+
+templ Buttonpage (data dto.ButtonViewDTO) {
 	<html>
 		@vcomponent.Title(data.Name)
 		<body class="max-h-[100vh] select-none text-base overflow-hidden">
@@ -14,19 +18,81 @@ templ Buttonpage (data dto.ViewBaseDTO) {
 				</div>
 				<div class="w-full max-h-[calc(100vh-64px)] overflow-y-auto">
 					<div class="p-4">
-						<div class="text-5xl font-semibold">Chart </div>
+						<div class="text-5xl font-semibold">Button </div>
 						<div class="text-base my-2">
-							Chart design. 
+							Our buttons convention.
 						</div>
-						<div class="text-3xl font-semibold my-1 mt-4">Line Chart </div>
-						<hr class="text-disabled mb-2"/>
-						<canvas id="linechart"></canvas>
-						<div class="text-3xl font-semibold my-1 mt-4">Bar Chart </div>
-						<hr class="text-disabled mb-2"/>
-						<canvas id="barchart"></canvas>
+						<div class="my-1">
+							<form action="/button" method="post">
+								<div class="relative w-full flex flex-col">
+									<div class="absolute w-full flex flex-row justify-end items-center h-full z-0">
+										<svg class="pointer-events-none row-start-1 col-start-1 mr-2" height="12px" width="12px" viewBox="0 0 16 16">
+											<path fill-rule="evenodd" d="M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708"></path>
+										</svg>
+									</div>
+									<select id="btn_type_select" name="button_type" onchange="this.form.submit()" class="appearance-none w-full px-2 py-1 my-1 border border-default-border z-10 bg-transparent">
+										<option value="Primary">Primary</option>
+										<option value="Success">Success</option>
+										<option value="Warning">Warning</option>
+										<option value="Danger">Danger</option>
+									</select>
+								</div>
+							</form>
+						</div>
+						<div class="min-w-full min-h-[300px] rounded-md flex flex-row relative">
+							<div class="absolute w-full flex flex-col items-center my-4">
+								<div class="flex flex-row w-full my-1 items-center justify-around">
+									<div
+										class={
+											"text-center text-white rounded-md px-2 py-1 cursor-pointer shadow-sm",
+											templ.KV("bg-primary hover:bg-primary/80", data.Type == "Primary"),
+											templ.KV("bg-success hover:bg-success/80", data.Type == "Success"),
+											templ.KV("bg-warning hover:bg-warning/80", data.Type == "Warning"),
+											templ.KV("bg-danger hover:bg-danger/80", data.Type == "Danger"),
+										}
+									>{ data.Type } </div>
+									<div
+										class={
+											"text-center text-white rounded-md px-2 py-1 cursor-pointer shadow-sm",
+											templ.KV("bg-primary hover:bg-primary/80", data.Type == "Primary"),
+											templ.KV("bg-success hover:bg-success/80", data.Type == "Success"),
+											templ.KV("bg-warning hover:bg-warning/80", data.Type == "Warning"),
+											templ.KV("bg-danger hover:bg-danger/80", data.Type == "Danger"),
+										}
+									>{ data.Type } </div>
+								</div>
+								<div class="flex flex-row w-full my-1 items-center justify-around">
+									<div class="text-center bg-disabled text-white rounded-md px-2 py-1 cursor-default">{ data.Type } (Disabled) </div>
+									<div class="text-center bg-dark-disabled text-white rounded-md px-2 py-1 cursor-default">{ data.Type } (Disabled)</div>
+								</div>
+								<div class="flex flex-row w-full my-1 items-center justify-around">
+									<div
+										class={
+											"text-center border border-default-border text-text rounded-md px-2 py-1 cursor-pointer shadow-sm",
+											templ.KV("hover:border-primary hover:text-primary", data.Type == "Primary"),
+											templ.KV("hover:border-success hover:text-success", data.Type == "Success"),
+											templ.KV("hover:border-warning hover:text-warning", data.Type == "Warning"),
+											templ.KV("hover:border-danger hover:text-danger", data.Type == "Danger"),
+										}
+									>Default </div>
+									<div
+										class={
+											"text-center border border-dark-default-border text-dark-text rounded-md px-2 py-1 cursor-pointer shadow-sm",
+											templ.KV("hover:border-primary hover:text-primary", data.Type == "Primary"),
+											templ.KV("hover:border-success hover:text-success", data.Type == "Success"),
+											templ.KV("hover:border-warning hover:text-warning", data.Type == "Warning"),
+											templ.KV("hover:border-danger hover:text-danger", data.Type == "Danger"),
+										}
+									>Default</div>
+								</div>
+							</div>
+							<div class="bg-layout-background flex-1 rounded-l-md"></div>
+							<div class="bg-dark-layout-background flex-1 rounded-r-md"></div>
+						</div>
 					</div>
 				</div>
 			</div>
+			@selectDropdown(data.Type)
 		</body>
 	</html>
 }

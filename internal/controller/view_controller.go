@@ -11,6 +11,7 @@ type ViewController interface {
 	HomepageHandler() func(http.ResponseWriter, *http.Request)
 	ColorpageHandler() func(http.ResponseWriter, *http.Request)
 	FontpageHandler() func(http.ResponseWriter, *http.Request)
+	ButtonpageHandler() func(http.ResponseWriter, *http.Request)
 	ChartpageHandler() func(http.ResponseWriter, *http.Request)
 	AlertPageHandler() func(http.ResponseWriter, *http.Request)
 }
@@ -40,6 +41,22 @@ func (i *implViewController) FontpageHandler() func(http.ResponseWriter, *http.R
 	return func(w http.ResponseWriter, r *http.Request) {
 		vpage.Fontpage(dto.ViewBaseDTO{
 			Name: "Font",
+		}).Render(r.Context(), w)
+	}
+}
+
+func (i *implViewController) ButtonpageHandler() func(http.ResponseWriter, *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
+		buttonType := r.PostFormValue("button_type")
+		if buttonType == "" {
+			buttonType = "Primary"
+		}
+
+		vpage.Buttonpage(dto.ButtonViewDTO{
+			ViewBaseDTO: dto.ViewBaseDTO{
+				Name: "Button",
+			},
+			Type: buttonType,
 		}).Render(r.Context(), w)
 	}
 }

@@ -4,6 +4,11 @@ type ViewBaseDTO struct {
 	Name string
 }
 
+type ButtonViewDTO struct {
+	ViewBaseDTO
+	Type string
+}
+
 type ChartViewDTO struct {
 	ViewBaseDTO
 	Dataset []ChartDataset
